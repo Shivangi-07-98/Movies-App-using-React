@@ -1,29 +1,16 @@
 import React from 'react';
-// import { Routes, Route, Link } from 'react-router-dom';
+import Routing from './Routing';
 import './App.css';
-import Home from './components/Home';
-import Login from './components/Login';
-import New from './components/New';
-import NavBar from './components/NavBar';
-import PageNotFound from './components/PageNotFound';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-      <Router>
-      <NavBar />
-      <Routes>
-        <Route path='/home' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/new' element={<New />} />
-        {/* the index route is defined for the / route */}
-        <Route index element={<Home />} />
-        <Route path='*' element={<PageNotFound />} />
-      </Routes>
-      </Router>
+      <Routing></Routing>
     </div>
   );
 }
 
 export default App;
+
+// Netlify Deployment
+// public -> (make file) --redirects -> (inside file) /*/index.html 200 -> npm run build -> netlify login -> sites -> drag and drop build file
